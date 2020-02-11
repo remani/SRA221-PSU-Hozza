@@ -1,6 +1,6 @@
 # SRA221-PSU-Hozza
 
-## Steps to working in the PKI Lab
+## Steps to working through the PKI Lab
 
 1. Create your environment
 ```
@@ -20,4 +20,10 @@ openssl genrsa -aes128 -out server.key 1024
 openssl rsa -in server.key -text
 openssl req -new -key server.key -out server.csr -config openssl.cnf
 openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -config openssl.cnf
+```
+
+3. Make web directories
+```
+sudo mkdir /var/www/sra221
+cp index.html /var/www/sra221
 ```
