@@ -14,3 +14,7 @@ openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -config o
 sudo mkdir /var/www/sra221
 sudo cp index.html /var/www/sra221
 sudo cp seed-ssl.conf /etc/apache2/sites-available
+sudo apachectl configtest
+sudo a2enmod ssl
+sudo a2ensite seed-ssl
+sudo service apache2 restart
