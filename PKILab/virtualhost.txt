@@ -1,0 +1,8 @@
+<VirtualHost *:443>
+ServerName sra221.com
+DocumentRoot /var/www/sra221
+DirectoryIndex index.html
+SSLEngine On
+SSLCertificateFile /home/seed/server.crt
+SSLCertificateKeyFile /home/seed/server.key
+</VirtualHost>
