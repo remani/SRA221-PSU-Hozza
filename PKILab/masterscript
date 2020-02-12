@@ -18,3 +18,4 @@ sudo apachectl configtest
 sudo a2enmod ssl
 sudo a2ensite seed-ssl
 sudo service apache2 restart
+echo "127.0.0.1	sra221.com" >> /etc/hosts
