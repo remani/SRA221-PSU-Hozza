@@ -1,31 +1,39 @@
-# Simple script to crack password hashes. Very limited input/output
+# Simple script to crack lowercase MD5 password hashes
+# Brant Goings
 
+# Library needed to hash dictionary file
 import hashlib
 
+# Files to import
 hashlist = "hashes.txt"
 dictlist = "dictionary.txt"
 
 # Method to run
 def crack():
-    # Opens the dictionary file
+    # Opens dictionary file as read-only referred to as dictreader
     with open(dictlist, "r") as dictreader:
         try:
-            # Starts for loop
+            # Starts for loop in dictreader
             for dictline in dictreader:
-                # Opens hash file
+                # Opens hash file as read-only referred to as hashreader
                 with open(hashlist, "r") as hashreader:
-                    # Starts nested for loop
+                    # Starts nested for loop in hashreader
                     for hashline in hashreader:
+
+# -------------------- BEGIN SUPER IMPORTANT PART -------------------- #
                         # If statement compares the hashed version of the password in dictionary.txt with the hash in hashes.txt
-                        if hashlib.md5(dictline.rstrip().encode()).hexdigest().lower() == hashline.rstrip().lower():
+                        if hashlib.md5(dictline.rstrip().encode()).hexdigest() == hashline.rstrip():
                             # If they match, print the hash and the line in dictionary.txt we're currently at
-                            print("MD5 hash cracked -- " + hashline.lower().rstrip() + " : " + dictline)
+                            print("MD5 hash cracked -- " + hashline.rstrip() + " : " + dictline)
+                        # If they're not the same, continue without doing anything
                         else:
-                            # If they're not the same, don't do anything
                             pass
+# -------------------- END SUPER IMPORTANT PART -------------------- #
+
         except:
             pass
 
+# Spaces the output for readability
 print("\n")
 # Run the script
 crack()
