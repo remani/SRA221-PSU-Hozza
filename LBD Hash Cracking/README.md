@@ -18,4 +18,12 @@ you'llneverguessme
 ```
 
 #### SimpleCracker.py
-Takes the above input and uses a nested for loop to hash the dictionary.txt lines then compare to the hashes.txt lines. If any of them match, it prints to terminal the matching pair(s).
+Takes the above input and uses a nested for loop to hash the dictionary.txt lines then compare to the hashes.txt lines. If any of them match, it prints to terminal the matching pair(s). The above lines return this output:
+
+```
+MD5 hash cracked -- 5f4dcc3b5aa765d61d8327deb882cf99 : password
+MD5 hash cracked -- 827ccb0eea8a706c4c34a16891f84e7b : 12345
+MD5 hash cracked -- 5952c9e4cbfffb0d3415310acd703ae6 : you'llneverguessme
+```
+
+Note: See https://github.com/bgoings1/PassCrack for a more comprehensive version of this.
